@@ -1,0 +1,19 @@
+{
+  "name": "group-2",
+  "version": "1.0.0",
+  "description": "This is the BBD group project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnityGameDesign-max/group-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UnityGameDesign-max/group-2/issues"
+  },
+  "homepage": "https://github.com/UnityGameDesign-max/group-2#readme"
+}
