@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/UnityGameDesign-max/group-2#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "msnodesqlv8": "^2.4.7",
+    "mssql": "^8.1.0"
   }
 }
