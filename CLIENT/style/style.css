@@ -8,7 +8,9 @@
 
 :root {
     --COLOR-PRIMARY: #081B38;
+    --COLOR-PRIMARY-200: #05162e;
     --COLOR-SECONDARY: #42DC64;
+    --COLOR-SECONDARY-200: #2d9c45;
     --COLOR-TERTIARY: #FFF;
     --COLOR-TERTIARY-100: #DBA314;
     --COLOR-TERTIARY-200: #616369d3;
@@ -60,6 +62,10 @@
     border-bottom-right-radius: 5px;
 }
 
+.search-section button:hover {
+    background-color: var(--COLOR-SECONDARY-200)
+}
+
 .search-section button figure img {
     width: 12px;
 }
@@ -85,9 +91,10 @@
     width: 20%;
 }
 
-.links-section .links-section__border::after {
-    content: "";
-    color: #42DC64;
+.links-section ul .links-section__border::after {
+    content: '';
+    position: absolute;
+    background-color: #2dbe28;
 }
 
 .top-navigation h4,
@@ -158,4 +165,121 @@
 .bottom-navigation ul li a,
 .bottom-navigation a {
     text-decoration: none;
+}
+
+
+/*  HERO SECTIONS  */
+
+.hero-section__content h3 {
+    font-family: Roboto;
+    letter-spacing: 0.20em;
+    font-size: 1.7rem;
+    color: var(--COLOR-TERTIARY-100);
+    margin-bottom: 0.6em;
+}
+
+.hero-section__padding-center {
+    margin-inline: auto;
+    width: 70%;
+}
+
+.hero-section {
+    padding-block: 10em;
+    align-items: center;
+    max-width: 2330px;
+    justify-content: space-between;
+}
+
+.hero-section h1 {
+    font-size: 2.9em;
+    max-width: 600px;
+    margin-bottom: 0.9em;
+}
+
+.hero-section img {
+    object-fit: contain;
+    width: 54%;
+}
+
+.hero-section__content {
+    width: 43%;
+}
+
+.hero-section h1,
+.hero-section p {
+    color: var(--COLOR-PRIMARY);
+}
+
+.hero-section__content a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--COLOR-TERTIARY);
+    background-color: var(--COLOR-PRIMARY);
+    padding: 1em 2em;
+    border-radius: 5px;
+}
+
+.hero-section__content a:hover {
+    background-color: var(--COLOR-PRIMARY-200);
+}
+
+.hero-section p {
+    font-weight: 600;
+    margin-bottom: 4em;
+}
+
+.discounted-items {
+    justify-content: space-evenly;
+}
+
+.discount__veggies {
+    background-color: #E8F4D9;
+}
+
+.discount__fruits {
+    background-color: #F8E9D3;
+}
+
+.discount__Snacks {
+    background-color: #EAEDF0;
+}
+
+.discount__fruits,
+.discount__veggies,
+.discount__Snacks {
+    padding: 2em 3em;
+    border-radius: 7px;
+}
+
+.discount__veggies,
+.discount__fruits,
+.discount__Snacks {
+    align-items: center;
+}
+
+.discount__veggies h4,
+.discount__fruits h4,
+.discount__Snacks h4 {
+    font-size: 1.06rem;
+}
+
+.discount__veggies p {
+    color: var(--COLOR-SECONDARY);
+}
+
+.discount__veggies section button {
+    border: none;
+    cursor: pointer;
+    padding: 0.6em 0.8em;
+    margin-top: 12px;
+    border-radius: 5px;
+    color: var(--COLOR-TERTIARY);
+    background-color: var(--COLOR-SECONDARY);
+}
+
+.discount__fruits p,
+.discount__Snacks p,
+.discount__veggies p {
+    font-size: 0.7rem;
+    font-weight: 600;
 }
