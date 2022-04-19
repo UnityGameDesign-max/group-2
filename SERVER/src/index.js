@@ -1,16 +1,25 @@
 const configs = require("./config")
 
 configs.connect().then((result) => {
-    if(result.connecting){
-        console.log("connecting.......")
-    }
-    if(result.connected){
+    
+    const viewAllCustomers = () => {
         result.request().query("SELECT * FROM dbo.Customers", (err, result) => {
-            if(err){
+            try{
+                console.log(result.recordset)
+            }catch(err){
                 console.log(err)
             }
-            console.log(result.recordset)
         })
-        console.log("connected...")
     }
+    
+    const addCustomers = () => {
+        result.request().query("SELECT * FROM dbo.Customers WHERE CustomerId='1'", (err, result)=>{
+            try{
+                console.log(result)
+            }catch(err){
+                console.log(err)
+            }
+        })
+    }
+    
 });
