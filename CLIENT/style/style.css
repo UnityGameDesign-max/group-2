@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100&family=Roboto:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Hanuman;
+}
+
+:root {
+    --COLOR-PRIMARY: #081B38;
+    --COLOR-SECONDARY: #42DC64;
+    --COLOR-TERTIARY: #FFF;
+    --COLOR-TERTIARY-100: #DBA314;
+    --COLOR-TERTIARY-200: #616369d3;
+}
+
+.container {
+    margin: 0 auto;
+    /* max-width: 1800px; */
+}
+
+.top-navigation {
+    background-color: var(--COLOR-PRIMARY);
+    padding-block: 2em;
+    align-items: center;
+    width: 100%;
+}
+
+.row-item {
+    display: flex;
+}
+
+.logo-section {
+    align-items: center;
+    width: 10%;
+}
+
+.top-navigation h3 {
+    color: var(--COLOR-TERTIARY-100);
+    font-size: 1rem;
+}
+
+.search-section {
+    margin-inline: 2em;
+    width: 60%;
+}
+
+.search-section select {
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-section button {
+    background-color: var(--COLOR-SECONDARY);
+    color: var(--COLOR-TERTIARY);
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.search-section button figure img {
+    width: 12px;
+}
+
+.search-section button figure {
+    align-items: center;
+    justify-content: center;
+}
+
+.search-section select,
+.search-section button {
+    width: 15%;
+    padding: 0.57em;
+}
+
+.search-section input {
+    width: 70%;
+    padding-inline: 1em;
+}
+
+.links-section {
+    align-items: center;
+    width: 20%;
+}
+
+.links-section .links-section__border::after {
+    content: "";
+    color: #42DC64;
+}
+
+.top-navigation h4,
+.links-section ul li a {
+    color: var(--COLOR-TERTIARY);
+}
+
+.top-navigation h4 {
+    text-align: center;
+}
+
+.links-section ul li a {
+    text-decoration: none;
+    margin-right: 2em;
+}
+
+.links-section ul li,
+.bottom-navigation__links li {
+    list-style-type: none;
+}
+
+.links-section ul li img {
+    width: 20px;
+}
+
+.top-navigation .logo-section img {
+    width: 60px;
+}
+
+.bottom-navigation-padding {
+    margin-inline: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.bottom-navigation {
+    box-shadow: 0 1px 5px grey;
+    padding-block: 1.4em;
+}
+
+.bottom-navigation__gift-voucher {
+    background-color: var(--COLOR-PRIMARY);
+    align-items: center;
+    color: var(--COLOR-TERTIARY);
+    padding: 0.4em 1em;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.bottom-navigation__gift-voucher img {
+    margin-right: 0.6em;
+}
+
+.bottom-navigation__gift-voucher small {
+    margin-left: 0.8em;
+}
+
+.bottom-navigation__links li {
+    margin-right: 2em;
+}
+
+.bottom-navigation__links li a {
+    color: var(--COLOR-TERTIARY-200);
+    font-weight: 700;
+}
+
+.bottom-navigation ul li a,
+.bottom-navigation a {
+    text-decoration: none;
+}

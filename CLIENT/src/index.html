@@ -1,40 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <!--Do this data information is for later-->
+    <!--This data information is for later-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
+    <script>
+    </script>
     <title>Document</title>
 </head>
 
 <body>
-    <nav>
-        <figure>
-            <img src="../assets/Shop.svg" alt="This is the logo of the store"/>
-            <figureCaption>
+    <nav class="top-navigation row-item">
+        <container class="container"></container>
+        <figure class="logo-section row-item">
+            <img src="../assets/Shop.svg" alt="This is the logo of the store" />
+            <figcaption>
                 <aside>
                     <h3>HLEKETANI</h3>
                     <h4>Grocery</h4>
                 </aside>
-            </figureCaption>
+            </figcaption>
         </figure>
-        <form>
+        <form class="search-section row-item">
             <select aria-placeholder="Catergory">
+                <option>Catergory</option>
                 <option>Fresh Veggies</option>
                 <option>Bread & Buns</option>
                 <option>Cooking Spice</option>
                 <option>Dairy Products</option>
             </select>
-            <input type="text" name="search input" />
+            <input placeholder="Search......" type="text" name="search input" />
             <button type="submit">
-               <figure>
+               <figure class="row-item">
                    <img src="../assets/Search.svg" alt="search icon"/>
-                   <figureCaption> Search</figureCaption>
+                   <figcaption>SEARCH</figcaption>
                </figure>
             </button>
         </form>
+
+        <section class="links-section">
+            <ul class="row-item">
+                <li><a href="#">Login</a></li>
+                <li><a class="links-section__border" href="#">Sign Up</a></li>
+                <li>
+                    <figure>
+                        <a href="#" class="row-item">
+                            <img src="../assets/Shopping Cart.svg" alt="shopping cart icon" />
+                            <figcaption>
+                                My Cart
+                            </figcaption>
+                        </a>
+                    </figure>
+                </li>
+            </ul>
+        </section>
     </nav>
+
+    <nav class="bottom-navigation">
+        <container class="bottom-navigation-padding row-item">
+            <ul class="bottom-navigation__links row-item">
+                <li><a href="#">New Products</a></li>
+                <li><a href="#">Best Sales</a></li>
+                <li><a href="#">Promotions</a></li>
+                <li><a href="#">Offers</a></li>
+            </ul>
+            <a class="bottom-navigation__gift-voucher row-item" href="#">
+                <img src="../assets/Card giftcard.svg" alt="Voucher"> Gift Voucher
+                <small>2</small>
+            </a>
+        </container>
+    </nav>
+
+    <main>
+        <section class="hero-section">
+            <h3>100 % Natural</h3>
+        </section>
+    </main>
 </body>
+
 </html>
