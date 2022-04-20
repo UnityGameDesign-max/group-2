@@ -20,9 +20,13 @@ app.get('/products', async (req, res) => {
     res.send(products)
 })
 
+// app.get('/', (req,res) => {
+//     res.sendFile(path.join(__dirname,'.././CLIENT/src/signUp.html'));
+//   });
 
-app.post('/addCustomers', async (req, res) => {
-    insertCustomers(name, lastName)
+
+app.get('/addCustomers', async (req, res) => {
+    console.log(req.body.name)
 })
 
 app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`))
