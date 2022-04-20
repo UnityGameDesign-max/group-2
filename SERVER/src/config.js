@@ -1,13 +1,11 @@
-const sql = require('mssql/msnodesqlv8')
-
-const databaseConfig = new sql.ConnectionPool({
-  database: "ONLINESYSTEMS",
+const databaseConfig = {
   server: "localhost",
+  port: 1433,
+  database: "ONLINESYSTEMS1",
   driver: "msnodesqlv8",
   options: {
-    trustedConnection: true,
-    trustServerCertificate: true
+    trustedConnection: true
   }
-});
+};
 
 module.exports = databaseConfig;
