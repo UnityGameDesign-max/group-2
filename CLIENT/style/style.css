@@ -100,6 +100,10 @@
 .top-navigation h4,
 .links-section ul li a {
     color: var(--COLOR-TERTIARY);
+    font-weight: 550;
+}
+.links-section ul li a:hover{
+    color: var(--COLOR-SECONDARY);
 }
 
 .top-navigation h4 {
@@ -178,7 +182,7 @@
     margin-bottom: 0.6em;
 }
 
-.hero-section__padding-center {
+.section__padding-center {
     margin-inline: auto;
     width: 70%;
 }
@@ -201,6 +205,11 @@
     width: 54%;
 }
 
+
+.discount__padding-center{
+    margin-inline: auto;
+    width: 84%;
+}
 .hero-section__content {
     width: 43%;
 }
@@ -255,26 +264,59 @@
 .discount__fruits,
 .discount__Snacks {
     align-items: center;
+    justify-content: space-between;
 }
 
 .discount__veggies h4,
 .discount__fruits h4,
 .discount__Snacks h4 {
     font-size: 1.06rem;
+    margin-bottom: 0.3em;
 }
 
+.discounted-items section{
+    margin-right: 0.85em;
+    flex: 0.7;
+}
+.discounted-items img{
+    flex: 0.3;
+}
+
+.discount__fruits p,
+.discount__Snacks p,
+.discount__veggies p{
+    font-weight: 800;
+}
 .discount__veggies p {
     color: var(--COLOR-SECONDARY);
 }
+.discount__fruits p{
+    color: var(--COLOR-TERTIARY-100);
+}
+.discount__Snacks p{
+    color: #499DF0;
+}
 
 .discount__veggies section button {
+ 
+    background-color: var(--COLOR-SECONDARY);
+}
+.discount__fruits section button{
+    background-color: var( --COLOR-TERTIARY-100);
+}
+
+.discount__Snacks section button{
+    background-color: #499DF0;
+}
+.discount__veggies section button,
+.discount__fruits section button,
+.discount__Snacks section button{
     border: none;
     cursor: pointer;
     padding: 0.6em 0.8em;
     margin-top: 12px;
     border-radius: 5px;
     color: var(--COLOR-TERTIARY);
-    background-color: var(--COLOR-SECONDARY);
 }
 
 .discount__fruits p,
@@ -282,4 +324,60 @@
 .discount__veggies p {
     font-size: 0.7rem;
     font-weight: 600;
+}
+
+.categories{
+    padding-block: 9em;
+}
+
+.categories article{
+    padding: 3.1em 4.9em;
+    border-radius: 6px;
+}
+
+.categories .categories__veggies,
+.categories .categories__bread, 
+.categories .categories__dairy,
+.categories .categories__spice{
+    text-align: left;
+}
+
+.categories .categories__veggies{
+    background-color: var(--COLOR-SECONDARY-200);
+}
+
+.categories .categories__bread{
+    background-color: #4853B5;
+}
+
+.categories h2{
+    margin-bottom: 3.1em;
+}
+.categories .categories__spice{
+    background-color: #DB8B14;
+}
+
+.categories .categories__dairy{
+    background-color: #315893 ;
+}
+
+.categories section h5, .categories section h3{
+    color: var(--COLOR-TERTIARY);
+}
+
+.category-section{
+    justify-content: space-evenly;
+}
+
+.categories-section section{
+    margin-right: 3em;
+}
+.categories article{
+    position: relative;
+}
+.categories img {
+    position: absolute;
+    width: 85px;
+    bottom: 0px;
+    right: 8px;
 }
