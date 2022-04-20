@@ -1,4 +1,6 @@
 
+
+console.log(username)
 const getAllProducts = () => {
     fetch('http://localhost:3000/products')
     .then(response => response.json())
@@ -6,14 +8,12 @@ const getAllProducts = () => {
 }
 getAllProducts()
 
-// getAllProducts().map((item) => {
-//     console.log(item)
-// })
+
 
 const CreateCard = (data) =>{ 
-    console.log(data)
+    console.log(data.length)
     data.map(item => {
-        `
+       return `
             <article>
                 <img src="" alt="">
                 <p>${item.C}</p>
@@ -23,33 +23,34 @@ const CreateCard = (data) =>{
         `
     })
 
+    console.log(CreateCard())
+
+
     /*const para=document.createElement("p");
     const paraText=document.createTextNode(data[0].P[0])
     para.appendChild(paraText);
     document.getElementById("product").appendChild(para)
-    //document.body.appendChild(para)*/
+    document.body.appendChild(para)*/
 
-    for(var  i=0; i<data.length;i++){
-    const para=document.createElement("p")
+    for(let i=0; i<data.length;i++){
+        const productCard = document.createElement("article")
+        const para = document.createElement("p")
 
-    const paraText=document.createTextNode(data[i].C)
-    para.appendChild(paraText);
-    document.getElementById("product").appendChild(para)
-    console.log(para);
+        const paraText = document.createTextNode(data[i].C)
+        para.appendChild(paraText);
+        document.getElementById("product-section").appendChild(para)
+        console.log(para);
 
-    console.log(data.length)
+    // console.log(data.length)
 
-    for(var x=0; x<2;x++)
-    {
-        const head3=document.createElement("h3");
-        const head3Text=document.createTextNode(data[i].P[x])
-        head3.appendChild(head3Text);
-        document.getElementById("product").appendChild(head3)
-        console.log(head3);
-
+        for(let x=0; x<2;x++){
+            const head3=document.createElement("h3");
+            const head3Text=document.createTextNode(data[i].P[x])
+            head3.appendChild(head3Text);
+            document.getElementById("product-section").appendChild(head3)
+            console.log(head3);
+        }
     }
-
-}
 }
 
 const product = document.getElementById("product")

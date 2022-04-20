@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Hanuman;
+}
+
+:root {
+    --COLOR-PRIMARY: #081B38;
+    --COLOR-PRIMARY-200: #05162e;
+    --COLOR-SECONDARY: #42DC64;
+    --COLOR-SECONDARY-200: #2d9c45;
+    --COLOR-TERTIARY: #FFF;
+    --COLOR-TERTIARY-100: #DBA314;
+    --COLOR-TERTIARY-200: #616369d3;
+}

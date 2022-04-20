@@ -1,0 +1,54 @@
+@import "./globalStyles.css";
+
+body{
+    background-color: rgb(241, 241, 241);
+}
+article{
+    display: grid;
+    place-items: center;
+}
+article h2{
+    margin-block: 1.5em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 3.7em 2.6em;
+    background-color: var(--COLOR-TERTIARY);
+    border-radius: 6px;
+}
+
+form section{
+    display: flex;
+    flex-direction: column;
+    margin: 0.4em;
+}
+
+form input{
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+form input:focus{
+    outline: none;
+    border: 2px solid var(--COLOR-TERTIARY-100);
+}
+form p{
+    max-width: 450px;
+    margin-top: 1.3em;
+    font-weight: 600;
+}
+form strong{
+    color: var(--COLOR-TERTIARY-100);
+}
+form button{
+    margin-top: 2em;
+    background-color: var(--COLOR-PRIMARY);
+    align-items: center;
+    color: var(--COLOR-TERTIARY);
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
