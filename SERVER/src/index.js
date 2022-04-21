@@ -40,9 +40,9 @@ const getProducts = async () => {
     }
 }
 
-getProducts().then((response) => {
-    console.log(response);
-})
+// getProducts().then((response) => {
+//     console.log(response);
+// })
 
 
 module.exports = {getProducts, insertCustomers, getCustomers}

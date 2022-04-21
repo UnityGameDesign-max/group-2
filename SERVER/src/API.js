@@ -10,9 +10,10 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send('The server for Online Shopping is ready')
+    res.sendFile(".././CLIENT/src/SignUp.html")
 })
 
 app.get('/products', async (req, res) => {
@@ -20,13 +21,11 @@ app.get('/products', async (req, res) => {
     res.send(products)
 })
 
-// app.get('/', (req,res) => {
-//     res.sendFile(path.join(__dirname,'.././CLIENT/src/signUp.html'));
-//   });
 
-
-app.get('/addCustomers', async (req, res) => {
-    console.log(req.body.name)
+app.post('/addCustomers', async (req, res) => {
+    const {name, lastName, contacts, email, address, password} = req.body;
+    let allCustomers = await insertCustomers(name, lastName, contacts, email, address, password);
+    res.json(allCustomers)
 })
 
 app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`))
