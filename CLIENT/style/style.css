@@ -51,6 +51,7 @@
 
 .search-section button figure img {
     width: 12px;
+    cursor: pointer;
 }
 
 .search-section button figure {
@@ -367,4 +368,30 @@
 
 .product-section h2{
     margin-bottom: 1.4em;
+}
+
+.product-section .row-item  {
+    flex-direction: column;
+}
+.product-section-1, .product-section-2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-section-1 article, .product-section-2 article{
+    padding: 1.6em 2em;
+    border: 1px solid rgb(212, 212, 212);
+    margin-right: 2em;
+    border-radius: 8px;
+    margin-top: 2.4em;
+}
+
+footer{
+    background-color: var(--COLOR-PRIMARY);
+    margin-top: 4em;
+}
+footer h3{
+    text-align: center;
+    padding-block: 2em;
+    color: var(--COLOR-TERTIARY);
 }
