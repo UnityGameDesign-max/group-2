@@ -1,6 +1,6 @@
 const username = document.getElementById("name").value;
 const lastName = document.getElementById("lastname").value;
-const contact = document.getElementById("contact").value;
+const contacts = document.getElementById("contact").value;
 const email = document.getElementById("email").value;
 const address = document.getElementById("address").value;
 const password = document.getElementById("password").value;
@@ -13,10 +13,12 @@ submitButton.addEventListener("click",()=>{
     console.log("Event called!!")
 })
 
+console.log(typeof(contact), typeof(lastName) )
+
 console.log({
     "name" : username,
-    "lastname" : lastName,
-    "contact" :contact,
+    "lastName" : lastName,
+    "contacts" :contacts,
     "email" : email,
     "address" : address,
     "password" : password
@@ -25,14 +27,14 @@ const insertCustomerAPI = () => {
     fetch('http://localhost:3000/addCustomers', {
         method: 'POST',
         headers: {"Accept": "application/json","Content-type": "application/json"},
-        body: {
+        body: JSON.stringify({
             "name" : username,
-            "lastname" : lastName,
-            "contact" :contact,
+            "lastName" : lastName,
+            "contacts" :contacts,
             "email" : email,
             "address": address,
             "password" : password
-        },
+        }),
     })
     .then((res) => {
         return res.json();
