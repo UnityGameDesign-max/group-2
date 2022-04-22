@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.sendFile(".././CLIENT/src/SignUp.html")
+    res.send("EXPRESS IS RUNNING")
 })
 
 app.get('/products', async (req, res) => {

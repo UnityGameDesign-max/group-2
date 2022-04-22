@@ -20,8 +20,8 @@ const getCustomers = async () =>{
 const insertCustomers = async (name, lastName, contacts, email, address, password) =>{
     try{
         let pool = await sql.connect(databaseConfig);
-        let customer = await pool.request().query(`INSERT INTO Customers (FirstName, LastName, Contacts, Email, PhysicalAddress, UserPassword) 
-        VALUES('${name}', '${lastName}', '${contacts}', '${email}', '${address}', '${password}')`)
+        let customer = await pool.request().query(`INSERT INTO Customers (CustomerId, FirstName, LastName, Contacts, Email, PhysicalAddress, UserPassword) 
+        VALUES('identity', '${name}', '${lastName}', '${contacts}', '${email}', '${address}', '${password}')`)
         return customer;
     }catch(error){
         return error
