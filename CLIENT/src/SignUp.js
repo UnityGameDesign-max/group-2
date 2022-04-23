@@ -4,6 +4,7 @@ const contacts = document.getElementById("contact").value;
 const email = document.getElementById("email").value;
 const address = document.getElementById("address").value;
 const password = document.getElementById("password").value;
+const URL_OBJECT = require("../constants/URL")
 
 
 const submitButton = document.getElementById("submit-button")
@@ -23,8 +24,9 @@ console.log({
     "address" : address,
     "password" : password
 })
+
 const insertCustomerAPI = () => {
-    fetch('http://localhost:3000/addCustomers', {
+    fetch(URL_OBJECT.addCustomerEndPoint, {
         method: 'POST',
         headers: {"Accept": "application/json","Content-type": "application/json"},
         body: JSON.stringify({
