@@ -1,0 +1,59 @@
+@import "../style/globalStyles.css";
+
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+.Top-nav {
+    background-color: var(--COLOR-PRIMARY);
+    padding-block: 2em;
+    align-items: center;
+    width: 100%;
+}
+
+.row-item {
+    display: flex;
+}
+
+
+.giftpage-words {
+    margin: 0 auto;
+    max-width: 1232px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 1.7rem;
+}
+h2, h4{
+    font-size: 1.5rem;
+}
+
+.giftpage-words h3{
+    font-size: 1.3rem;
+}
+
+h2, h3, h4{
+    margin-block: 0.6em;
+}
+footer {
+    background-color: var(--COLOR-PRIMARY);
+    margin-top: 4em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h3 {
+    text-align: center;
+    padding-block: 2em;
+    color: var(--COLOR-TERTIARY);
+}
+
+@media (max-width: 1214px){
+    .giftpage-words{
+        padding-inline: 2em;
+    }
+}

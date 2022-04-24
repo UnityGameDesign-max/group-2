@@ -16,14 +16,6 @@ submitButton.addEventListener("click",()=>{
 
 console.log(typeof(contact), typeof(lastName) )
 
-console.log({
-    "name" : username,
-    "lastName" : lastName,
-    "contacts" :contacts,
-    "email" : email,
-    "address" : address,
-    "password" : password
-})
 
 const insertCustomerAPI = () => {
     fetch(URL_OBJECT.addCustomerEndPoint, {

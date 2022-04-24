@@ -121,7 +121,19 @@
 
 .bottom-navigation {
     box-shadow: 0 1px 5px grey;
+    background-color: var(--COLOR-TERTIARY);
     padding-block: 1.4em;
+}
+.bottom-navigation, .top-navigation{
+    position: fixed;
+    z-index: 1;
+}
+.bottom-navigation{
+    top: 112px;
+    width: 100%;
+}
+.top-navigation{
+    top: 0;
 }
 
 .bottom-navigation__gift-voucher {
@@ -387,7 +399,15 @@
     border-radius: 8px;
     margin-top: 2.4em;
 }
-
+.product-card{
+    position: relative;
+}
+.shopping-basket{
+    color: var(--COLOR-SECONDARY-200);
+   position: absolute;
+   bottom: 40px;
+   right: 40px;
+}
 .checked{
     color: var(--COLOR-TERTIARY-100);
 }

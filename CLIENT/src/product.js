@@ -1,102 +1,109 @@
 
+
 const getAllProducts = () => {
     fetch('http://localhost:3000/products')
     .then(response => response.json())
-    .then(data => getCardProduct(data))
+    .then(products => getCardProduct(products))
 }
 getAllProducts()
 
-const getCardProduct = (data) =>{ 
-    console.log(data);
-    let numOfArticlesInSection=1;
 
-    for(let i=6; i<data.length;i++){
+const getCardProduct = (products) =>{ 
+    console.log(products);
+   
+    const NUM_OF_PRODUCTS_PER_SECTION = 4;
+    const PRODUCT_INDEX = 6
+    let numOfArticlesInSection = 1;
+    let itemsInBasket = 0;
+    let productId = []
+    for(let i=PRODUCT_INDEX; i<products.length;i++){
 
-    const sec1=document.getElementById("product-section-1")
-    const sec2=document.getElementById("product-section-2");
-    const paraArt=document.createElement("article");
-
-    const changeColorOfFavourite = () => {
-        favoriteIcon.classList.add("checked");
-    }
-
-    const favoriteIcon = document.createElement('p');
-    const favouriteIconLink = document.createElement('a');
-    favoriteIcon.classList.add("fa");
-    favoriteIcon.classList.add("fa-star");
+        const firstSectionOfProducts = document.getElementById("product-section-1")
+        const secondSectionOfProducts = document.getElementById("product-section-2");
+        const basketItemNumber = document.getElementById("basketCount");
+        const ADD_FAVOURITE_MESSAGE = "ADD TO FAVOURITES";
+        const REMOVE_FAVOURITE_MESSAGE = "ADD TO FAVOURITES";
+        
+        const cardProductArticle = document.createElement("article");
+        cardProductArticle.classList.add("product-card")
 
 
-    favoriteIcon.addEventListener("click", function(){
-        changeColorOfFavourite()
-    })
-    favouriteIconLink.appendChild(favoriteIcon)
-    favouriteIconLink.href = "#product-section"
-    //img.appendChild(img.src);
-    //document.getElementById("product-section-1").appendChild(img);
-    paraArt.appendChild(favouriteIconLink);
-
-    const para=document.createElement("p");
-    const paraText=document.createTextNode(data[i].C);
-    para.appendChild(paraText);
-    paraArt.appendChild(para)
-
+        const favoriteIcon = document.createElement('p');
+        favoriteIcon.classList.add("fa");
+        favoriteIcon.classList.add("fa-star");
+        favoriteIcon.classList.add("favorite-icon");
+        favoriteIcon.style.cursor = "pointer";
     
-    
+        cardProductArticle.appendChild(favoriteIcon);
 
-    for(let x=0; x<data[i].P.length;x++)
-    {
+        favoriteIcon.addEventListener("click", function(){
+            const isToggled = favoriteIcon.classList.toggle("checked");
+        })
+        
 
-        //---------------Product name and price----------------
+        const basketIcon = document.createElement("i");
+        basketIcon.style.cursor = "pointer";
+        basketIcon.classList.add("fa");
+        basketIcon.classList.add("fa-shopping-basket");
+        basketIcon.classList.add("shopping-basket")
+        cardProductArticle.appendChild(basketIcon)
+        
+        basketIcon.addEventListener("click", ()=>{
+            itemsInBasket++;
+            localStorage.setItem('ITEMS_IN_BASKET', itemsInBasket)
+            basketItemNumber.textContent = localStorage.getItem('ITEMS_IN_BASKET');
+            localStorage.setItem('PRODUCT_ORDER', productId)
+            console.log(itemsInBasket)
+            console.log(productId)
+            productId.push(i)
+        })
+        
+        console.log(itemsInBasket)
+        for(let cardItems = 0; cardItems<products[i].Product.length; cardItems++){
 
+            if(cardItems == 0){
+                //// IMAGE--------------------
+                const productImage = document.createElement('img');
+                productImage.src = products[i].Product[cardItems]
+                firstSectionOfProducts.appendChild(productImage);
+                cardProductArticle.appendChild(productImage);
 
+                /// CATEGORY -----------------
 
-        if(x== 0){
-           
-            const img = document.createElement('img');
-            img.src = data[i].P[x]
-            //img.appendChild(img.src);
-            document.getElementById("product-section-1").appendChild(img);
-            paraArt.appendChild(img);
-            const para=document.createElement("p");
-            const paraText=document.createTextNode(data[i].C);
-            para.appendChild(paraText);
-            paraArt.appendChild(para)
-           
-            console.log(paraArt);
-            //console.log(img)
+                const categoryTag=document.createElement("p");
+                const categoryText=document.createTextNode(products[i].Category);
+                categoryTag.appendChild(categoryText);
+                cardProductArticle.appendChild(categoryTag)
+                console.log(cardProductArticle);
+            }
+
+            if(cardItems == 1){
+                //// PRODUCT_NAME -----------------
+                const priceTag=document.createElement("h3");
+                const priceText=document.createTextNode(products[i].Product[cardItems])
+                priceTag.appendChild(priceText);
+                cardProductArticle.appendChild(priceTag)
+            }
+
+            if(cardItems == 2){
+                //// PRODUCT_PRICE -------------- 
+                const productNameTag=document.createElement("h4");
+                const productNameText=document.createTextNode(products[i].Product[cardItems])
+                productNameTag.appendChild(productNameText);
+                cardProductArticle.appendChild(productNameTag)
+            }
         }
+        firstSectionOfProducts.appendChild(cardProductArticle)
+        console.log(cardProductArticle);
 
-
-        if(x==1)
-        {
-        const head3=document.createElement("h3");
-        const head3Text=document.createTextNode(data[i].P[x])
-        head3.appendChild(head3Text);
-       // paraArt1.appendChild(head3)
-        paraArt.appendChild(head3)
+        if(numOfArticlesInSection <= NUM_OF_PRODUCTS_PER_SECTION){
+            firstSectionOfProducts.appendChild(cardProductArticle)
         }
-
-        if(x==2)
-        {
-            const head2=document.createElement("h4");
-            const head2Text=document.createTextNode(data[i].P[x])
-            head2.appendChild(head2Text);
-           // paraArt1.appendChild(head3)
-            paraArt.appendChild(head2)
-        }
-       
+        else
+            secondSectionOfProducts.appendChild(cardProductArticle)
+        
+        numOfArticlesInSection++;
+        console.log(productId);
     }
-    document.getElementById("product-section-1").appendChild(paraArt)
-    console.log(paraArt);
-
-    if(numOfArticlesInSection<=4)
-    {
-        sec1.appendChild(paraArt)
-    }
-    else
-    sec2.appendChild(paraArt)
     
-numOfArticlesInSection++;
-}
-console.log(document.getElementById("product-section-1"));
 }
