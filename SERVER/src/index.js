@@ -21,19 +21,49 @@ const insertCustomers = async (name, lastName, contacts, email, address, passwor
     try{
         let pool = await sql.connect(databaseConfig);
         let customer = await pool.request().query(`INSERT INTO Customers (CustomerId, FirstName, LastName, Contacts, Email, PhysicalAddress, UserPassword) 
-        VALUES('identity', '${name}', '${lastName}', '${contacts}', '${email}', '${address}', '${password}')`)
-        return customer;
+        VALUES('${name}', '${lastName}', '${contacts}', '${email}', '${address}', '${password}')`)
+        return customer.recordset;
     }catch(error){
         return error
     }
 }
 
+const getProductOfId = async(productId) =>{
+    try{
+        let pool = await sql.connect(databaseConfig);
+        let productOfId = await pool.request().query(`SELECT * FROM dbo.Products WHERE ProductId = ${productId}`)
+        return productOfId;
+    }catch(error){
+        return error
+    }
+}
+
+const insertOrderedItems = async (productId, orderedQuantity) => {
+    try{
+        let pool = await sql.connect(databaseConfig);
+        let orderedItems = await pool.request().query(`INSERT INTO dbo.OrderedItems (ProductId, OrderedQuantity)
+        VALUES ('${productId}', '${orderedQuantity}')`)
+        return orderedItems;
+    }catch(error){
+        return error;
+    }
+}
+
+const getOrderedItems = async () =>{
+    try{
+        let pool = await sql.connect(databaseConfig);
+        let orderedItems = await pool.request().query(`SELECT ProductId, OrderedQuantity FROM OrderedItems`)
+        return orderedItems.recordset;
+    }catch(error){
+        return error
+    }
+}
 
 const getProducts = async () => {
     try{
         let pool = await sql.connect(databaseConfig);
-        let products = await pool.request().query(`SELECT ProductName P, Price P, CategoryType C FROM Products P
-         LEFT JOIN Category C ON P.CategoryId = C.CategoryId `);
+        let products = await pool.request().query(`SELECT Images Product, ProductName Product, Price Product, CategoryType Category FROM Products Product
+         LEFT JOIN Category Category ON Product.CategoryId = Category.CategoryId `);
         return products.recordset;
     }catch(error){
         return error
@@ -45,4 +75,4 @@ const getProducts = async () => {
 // })
 
 
-module.exports = {getProducts, insertCustomers, getCustomers}
+module.exports = {getProducts, insertCustomers, getCustomers, getProductOfId, insertOrderedItems, getOrderedItems}
