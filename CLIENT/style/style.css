@@ -75,11 +75,6 @@
     width: 20%;
 }
 
-.links-section ul .links-section__border::after {
-    content: '';
-    position: absolute;
-    background-color: #2dbe28;
-}
 
 .top-navigation h4,
 .links-section ul li a {
@@ -93,6 +88,7 @@
 .top-navigation h4 {
     text-align: center;
 }
+
 
 .links-section ul li a {
     text-decoration: none;
@@ -166,15 +162,17 @@
 .bottom-navigation a {
     text-decoration: none;
 }
-
+.bottom-navigation__mobile-view{
+    display: none;
+}
 
 /*  HERO SECTIONS  */
 
 .hero-section__content h3 {
-    font-family: Roboto;
-    letter-spacing: 0.20em;
-    font-size: 1.7rem;
-    color: var(--COLOR-TERTIARY-100);
+    
+    max-width: 600px;
+    font-size: 2.9rem;
+    color: var(--COLOR-PRIMARY);
     margin-bottom: 0.6em;
 }
 
@@ -184,16 +182,18 @@
 }
 
 .hero-section {
-    padding-block: 10em;
+    padding-block: 20em;
     align-items: center;
     max-width: 2330px;
     justify-content: space-between;
 }
 
-.hero-section h1 {
-    font-size: 2.9em;
-    max-width: 600px;
+.hero-section__content h1 {
+    font-size: 1.9em;
+    font-family: Roboto;
+    letter-spacing: 0.20em;
     margin-bottom: 0.9em;
+    color: #315893;
 }
 
 .hero-section img {
@@ -338,6 +338,10 @@
     text-align: left;
 }
 
+.st-section article, .nd-section article{
+    margin-right: 2em ;
+}
+
 .categories .categories__veggies{
     background-color: var(--COLOR-SECONDARY-200);
 }
@@ -362,7 +366,12 @@
 }
 
 .category-section{
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.category-section section article{
+    margin-bottom: 2em;
+    margin-right: 2em;
 }
 
 .categories-section section{
@@ -391,9 +400,8 @@
 }
 
 .product-section-1 article, .product-section-2 article{
-    width: 300px;
-    display: grid;
-    padding: 1.3em 2em;
+    width: 100%;
+    padding: 1.3em 0.9em;
     border: 1px solid rgb(212, 212, 212);
     margin-right: 2em;
     border-radius: 8px;
@@ -403,7 +411,7 @@
     position: relative;
 }
 .shopping-basket{
-    color: var(--COLOR-SECONDARY-200);
+   color: var(--COLOR-SECONDARY-200);
    position: absolute;
    bottom: 40px;
    right: 40px;
@@ -420,4 +428,243 @@ footer h3{
     text-align: center;
     padding-block: 2em;
     color: var(--COLOR-TERTIARY);
+}
+
+@media (max-width: 1481px){
+    .links-section li a{
+        font-size: 0.82rem;
+    }
+    .links-section ul{
+        align-items: center;
+    }
+}
+
+@media (max-width: 1239px){
+    .top-navigation .logo-section h3{
+        font-size: 0.7rem;
+    }
+    .top-navigation .logo-section h4{
+        font-size: 0.8rem;
+    }
+    .links-section ul{
+        align-items: center;
+    }
+}
+
+@media (max-width: 1215px){
+    .links-section p{
+        display: none;
+    }
+}
+
+@media (max-width: 967px){
+    form figcaption{
+        display: none;
+    }
+    .links-section ul{
+        align-items: center;
+    }
+    .links-section {
+        align-items: center;
+        width: 25%;
+    }
+    .search-section input {
+        width: 70%;
+        padding-inline: 0.1em;
+    }
+    .logo-section {
+        width: 13%;
+    }
+    .search-section select,
+    .search-section button {
+        width: 15%;
+        padding: 0.27em;
+    }
+}
+
+@media (max-width: 833px){
+    .search-section select{
+        display: none;
+    }
+    .search-section input {
+        width: 70%;
+        padding: 0.27em;
+    }
+    .search-section{
+        width: 50%;
+        margin: 0;
+    }
+    .logo-section{
+        width: 20%;
+    }
+    .search-section input{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+@media (max-width: 777px){
+    .search-section{
+        width: 45%;
+    }
+    .logo-section{
+        width: 23%;
+    }
+    .links-section{
+        width: 30%;
+    }
+}
+
+@media (max-width: 633px){
+    .search-section{
+        width: 0%;
+        display: none;
+    }
+    .top-navigation{
+        justify-content: space-between;
+    }
+    .logo-section{
+        width: 45%;
+    }.links-section{
+        width: 45%;
+    }
+}
+
+@media (max-width: 1237px){
+    .bottom-navigation{
+        top: 102px;
+    }
+}
+
+@media (max-width: 691px){
+    .bottom-navigation li a, .bottom-navigation__gift-voucher p{
+        font-size: 0.9rem;
+    }
+    .bottom-navigation__mobile-view{
+        display: inline;
+    }.bottom-navigation .links{
+        display: none;
+    }
+}
+
+@media (max-width: 1096px){
+    .hero-section__content h3{
+        font-size: 2.5rem;
+    }
+    .hero-section__content h1{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 857px){
+    .hero-section{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-section__content h3{
+        font-size: 2.1rem;
+    }
+    .hero-section__content h1{
+        font-size: 1.3rem;
+    }
+    .hero-section img{
+        margin-bottom: 1.9em;
+        margin-left: 4.9em;
+    }
+    .hero-section {
+        padding-block: 14em;
+    }
+    .hero-section__content  a{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 710px){
+    .hero-section__content h3{
+        font-size: 2rem;
+    }
+    .hero-section__content h1{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1100px){
+    .discounted-items{
+        flex-direction: column;
+    }
+    .discounted-items article section{
+        width: 60%;
+    }.discounted-items article img{
+        width: 35%;
+    }
+    
+    .discounted-items article{
+        margin-bottom: 2em;
+        justify-content: center;
+    }
+
+    .discount__fruits p,
+    .discount__Snacks p,
+    .discount__veggies p {
+        font-size: 1.86rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1274px){
+    .discounted-items article img{
+        width: 40%;
+    }
+    
+    .discount__fruits,
+    .discount__veggies,
+    .discount__Snacks {
+        padding: 1em 1.7em;
+        border-radius: 7px;
+    }
+    .discount__veggies section button,
+    .discount__fruits section button,
+    .discount__Snacks section button{
+        font-size: 0.7rem;
+    }
+
+    .discount__fruits p,
+    .discount__Snacks p,
+    .discount__veggies p {
+        font-size: 0.86rem;
+        font-weight: 600;
+    }
+    .discount__fruits h4,
+    .discount__Snacks h4,
+    .discount__veggies h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .discounted-items section{
+        margin-right: 0.85em;
+        flex: 0.5;
+    }
+    .discounted-items img{
+        flex: 0.4;
+    }
+}
+
+@media (max-width: 1050px){
+    .product-section-1, .product-section-2{
+        flex-direction: column;
+    }
+    .product-section .row-item  {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .categories-section{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 942px){
+    .product-section .row-item  {
+        flex-direction: column;
+    }
 }
